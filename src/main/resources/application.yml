@@ -1,0 +1,34 @@
+micronaut:
+  application:
+    name: mygolfleague
+  security:
+    authentication: session
+    token:
+      jwt:
+      generator:
+        access-token:
+          expiration: 30
+        refresh-token:
+          secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:gobbldygook}"'
+        signatures:
+          secret:
+            generator:
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:gookldygobb}"'
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/glm_new
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 'leagueMedic!363'
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+        show_sql: true
+        physical_naming_strategy: "org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl"
+netty:
+  default:
+    allocator:
+      max-order: 3

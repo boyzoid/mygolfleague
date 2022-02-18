@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.mygolfleague
+testFramework: junit
+sourceLanguage: groovy
+buildTool: gradle
+features: [annotation-api, app-name, data, data-jpa, gradle, groovy, groovy-application, http-client, jackson-databind, jdbc-hikari, junit, logback, micronaut-build, mysql, netty-server, properties, reactor, reactor-http-client, readme, security-annotations, security-jwt, shade, testcontainers]
