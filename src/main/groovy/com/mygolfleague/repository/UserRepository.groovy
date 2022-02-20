@@ -1,7 +1,7 @@
 package com.mygolfleague.repository
 
 import com.mygolfleague.dto.LoginDto
-import com.mygolfleague.dto.UserDto
+import com.mygolfleague.dto.BasicUserDto
 import com.mygolfleague.model.User
 import groovy.transform.CompileStatic
 import io.micronaut.data.annotation.Repository
@@ -19,7 +19,7 @@ abstract class UserRepository implements CrudRepository< User, String> {
         this.entityManager = entityManager
     }
     abstract LoginDto getByEmailAddressAndPassword(String emailAddress, String password )
-    abstract UserDto getById(String id)
+    abstract BasicUserDto getById(String id)
     abstract List<User> findByLastName(String lastName)
 
 }

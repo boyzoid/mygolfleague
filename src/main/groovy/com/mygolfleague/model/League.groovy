@@ -1,6 +1,5 @@
 package com.mygolfleague.model
 
-import com.mygolfleague.dto.SimpleSeasonDto;
 
 import javax.persistence.*;
 

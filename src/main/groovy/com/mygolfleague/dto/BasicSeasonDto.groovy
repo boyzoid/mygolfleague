@@ -3,7 +3,7 @@ package com.mygolfleague.dto
 import io.micronaut.core.annotation.Introspected
 
 @Introspected
-class SimpleLeagueDto {
+class BasicSeasonDto {
     String id
     String name
 }
