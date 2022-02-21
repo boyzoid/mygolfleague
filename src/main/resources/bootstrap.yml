@@ -1,0 +1,12 @@
+micronaut:
+  application:
+    name: mygolfleague
+  config-client:
+    enabled: true
+oci:
+  vault:
+    config:
+      enabled: true
+    vaults:
+      - ocid: ocid1.vault.oc1.iad.b5rbfaoeaae2q.abuwcljtuvgppw5ynm7twcpdcx3envi6nfj54xzs6n3ox7hxovn4mvn7ifjq
+        compartment-ocid: ocid1.tenancy.oc1..aaaaaaaajhfkj4xs3o3rupybqlbwzhonzp2fe7ccidgqkvlvtjpqh4vp5qya

@@ -31,6 +31,7 @@ dependencies {
     testImplementation("org.testcontainers:mysql")
     testImplementation("org.testcontainers:testcontainers")
     implementation("io.micronaut:micronaut-validation")
+    implementation("io.micronaut.oraclecloud:micronaut-oraclecloud-vault")
 
 }
 

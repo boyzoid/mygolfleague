@@ -16,10 +16,10 @@ micronaut:
               secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:gookldygobb}"'
 datasources:
   default:
-    url: jdbc:mysql://localhost:3306/glm_new
+    url: jdbc:mysql://${DB_IP}:3306/glm_new
     driverClassName: com.mysql.cj.jdbc.Driver
-    username: root
-    password: 'leagueMedic!363'
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
 jpa:
   default:
     properties:
@@ -32,3 +32,5 @@ netty:
   default:
     allocator:
       max-order: 3
+secrets:
+  hashSalt: ${HASH_SALT}
