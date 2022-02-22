@@ -19,7 +19,7 @@ abstract class UserRepository implements CrudRepository< User, String> {
         this.entityManager = entityManager
     }
     abstract LoginDto getByEmailAddressAndPassword(String emailAddress, String password )
-    abstract BasicUserDto getById(String id)
+    abstract User getById(String id)
     abstract List<User> findByLastName(String lastName)
 
 }

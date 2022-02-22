@@ -43,10 +43,4 @@ class User {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     String password
 
-    @ManyToMany( fetch = FetchType.EAGER )
-    @JoinTable(name = "userleague",
-            joinColumns = @JoinColumn(name = "userId"),
-            inverseJoinColumns = @JoinColumn(name = "leagueId"))
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    List<League> leagues = new ArrayList<>()
 }
