@@ -1,7 +1,7 @@
 package com.mygolfleague.repository
 
-
-import com.mygolfleague.dto.BasicSeasonDto
+import com.mygolfleague.dto.RulesDto
+import com.mygolfleague.dto.SeasonDtoBasic
 import com.mygolfleague.model.Season
 import groovy.transform.CompileStatic
 import io.micronaut.data.annotation.Query
@@ -20,5 +20,8 @@ abstract class SeasonRepository implements CrudRepository<Season, String>{
     }
     @Query(value = "select s.id, s.name from season s join league l on l.id=s.leagueId where l.id = :id order by s.startDate desc",
             nativeQuery = true)
-    abstract List<BasicSeasonDto> findAllLeagueId(String id);
+    abstract List<SeasonDtoBasic> findAllLeagueId(String id);
+
+    @Query( value = "select id, name, rules, publishRules from season where season.id = :id", nativeQuery = true)
+    abstract RulesDto getRules( String id )
 }

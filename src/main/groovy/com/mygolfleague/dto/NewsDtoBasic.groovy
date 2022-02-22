@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat
 import io.micronaut.core.annotation.Introspected
 
 @Introspected
-class BasicNewsDto {
+class NewsDtoBasic {
     String id
     String title
     String summary

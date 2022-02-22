@@ -1,7 +1,6 @@
 package com.mygolfleague.repository
 
 import com.mygolfleague.dto.LoginDto
-import com.mygolfleague.dto.BasicUserDto
 import com.mygolfleague.model.User
 import groovy.transform.CompileStatic
 import io.micronaut.data.annotation.Repository

@@ -4,7 +4,7 @@ import com.mygolfleague.model.League
 import io.micronaut.core.annotation.Introspected
 
 @Introspected
-class BasicUserDto {
+class UserDtoBasic {
 
     String firstName
     String lastName

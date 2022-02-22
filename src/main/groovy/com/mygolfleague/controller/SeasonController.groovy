@@ -1,5 +1,7 @@
 package com.mygolfleague.controller
 
+import com.mygolfleague.dto.RulesDto
+import com.mygolfleague.model.Season
 import com.mygolfleague.repository.LeagueRepository
 import com.mygolfleague.repository.SeasonRepository
 import com.mygolfleague.repository.UserRepository
@@ -25,6 +27,14 @@ class SeasonController {
     @Get( uri = '/list/{id}', produces = MediaType.APPLICATION_JSON )
     HttpResponse list( String id ){
         var result = [ seasons: seasonRepository.findAllLeagueId( id ) ]
+        return HttpResponse.ok(
+                result
+        )
+    }
+    @Get( uri = '/rules/{id}', produces = MediaType.APPLICATION_JSON )
+    HttpResponse rules( String id ){
+        def rules = seasonRepository.getRules( id )
+        def result = [name: rules.name, id: rules.id, published: rules.publishRules, rules: rules.publishRules ? rules.rules : "" ]
         return HttpResponse.ok(
                 result
         )
