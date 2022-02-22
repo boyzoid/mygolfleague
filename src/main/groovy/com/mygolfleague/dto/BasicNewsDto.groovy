@@ -14,4 +14,5 @@ class BasicNewsDto {
     Date lastUpdatedDate
     String author
     String updatedBy
+    String leagueId
 }

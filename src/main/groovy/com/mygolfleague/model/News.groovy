@@ -11,9 +11,8 @@ import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.Lob
 import javax.persistence.ManyToOne
-import javax.persistence.PrePersist
 import javax.persistence.Table
-import java.time.Instant
+import javax.persistence.Transient
 
 @Entity
 @CompileStatic
@@ -63,6 +62,12 @@ class News {
     @Lob
     @Column(name = "summary")
     String summary;
+
+    @Transient
+    String leagueId
+    String getLeagueId(){
+        return league.id
+    }
 
 
 
