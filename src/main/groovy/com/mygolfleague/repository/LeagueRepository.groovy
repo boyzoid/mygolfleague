@@ -21,4 +21,5 @@ abstract class LeagueRepository implements CrudRepository<League, String>{
     @Query(value = "select l.id, l.name from league l join userleague ul on l.id=ul.leagueId join user u on ul.userId=u.id where u.id=:id and l.enabled=1 order by l.name",
             nativeQuery = true)
     abstract List<LeagueDtoBasic> findAllByUserId(String id);
+    abstract League getById( String id )
 }

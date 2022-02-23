@@ -6,4 +6,5 @@ import io.micronaut.core.annotation.Introspected
 class LeagueDtoBasic {
     String id
     String name
+    SeasonDtoBasic currentSeason
 }

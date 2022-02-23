@@ -17,6 +17,10 @@ public class League {
     @Column(name = "enabled")
      Boolean enabled;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "current_season_id")
+    Season currentSeason
+
     @ManyToMany( fetch = FetchType.EAGER )
     @JoinTable(name = "userleague")
     List<User> users = new ArrayList<>()

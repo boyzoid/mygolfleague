@@ -61,19 +61,17 @@ class NewsController {
             news.editor = user
             newsRepository.update( news )
         }
-        /*try{*/
-
-
+        try{
             def result = [ success : true, news: newsRepository.getById( news.id )]
             return HttpResponse.ok{
                 result
             }
-        /*}
+        }
         catch( e ){
             def result = [ success : false, error: e ]
             return HttpResponse.ok{
                     result
             }
-        }*/
+        }
     }
 }
