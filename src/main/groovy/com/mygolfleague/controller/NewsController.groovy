@@ -35,8 +35,9 @@ class NewsController {
         this.userRepository = userRepository
     }
 
-    @Get( uri = '/list/{id}/{page}/{size}', produces = MediaType.APPLICATION_JSON )
-    HttpResponse search( String id, int size, int page, @Nullable @QueryValue String search ){
+    @Get( uri = '/list/{id}/{page}/{size}{?search}', produces = MediaType.APPLICATION_JSON )
+
+    HttpResponse search( String id, int size, int page, @Nullable String search ){
         def result
         Pageable pageable = Pageable.from(page, size )
         if( search == null ){

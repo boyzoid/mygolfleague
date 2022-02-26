@@ -28,13 +28,7 @@ abstract class UserRepository implements CrudRepository< User, String> {
     abstract List<User> findByLastName(String lastName)
     UserDtoBasic getUserInit( String id ){
         User user = getById( id )
-        List<LeagueDtoBasic> leagues = leagueRepository.findAllByUserId( id )
-        def myLeagues = []
-        for( def league in leagues ){
-            Map thisLeague = [ id: league.id, name: league.name, seasons: seasonRepository.findAllLeagueId( league.id ) ]
-            myLeagues.add( thisLeague )
-        }
-        UserDtoBasic ret =new UserDtoBasic( user, myLeagues )
-        return ret
+        UserDtoBasic userDto = new UserDtoBasic( user );
+        return userDto
     }
 }
