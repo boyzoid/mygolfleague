@@ -11,6 +11,12 @@ class AcesDto {
         this.golfer = golfer
         this.course = course
     }
+    AcesDto( Object item ){
+        this.holeNumber = item[ 0 ]
+        this.datePlayed = item[ 1 ]
+        this.golfer = item[ 2 ]
+        this.course = item[ 3 ]
+    }
     Integer holeNumber
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "M/d/yyyy")
     Date datePlayed
