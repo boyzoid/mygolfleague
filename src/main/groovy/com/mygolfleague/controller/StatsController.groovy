@@ -10,23 +10,20 @@ import io.micronaut.http.annotation.Get
 import io.micronaut.security.annotation.Secured
 import io.micronaut.security.rules.SecurityRule
 
-import javax.inject.Inject
-import java.security.Principal
 
 @CompileStatic
 @Secured( SecurityRule.IS_AUTHENTICATED )
 @Controller( '/stats' )
 class StatsController {
     private final StatsService statsService
-    @Inject
     StatsController(  StatsService statsService ){
         this.statsService = statsService
     }
 
-    @Get( uri = '/{userId}{?seasonId}', produces = MediaType.APPLICATION_JSON )
-    HttpResponse list(String userId, @Nullable String seasonId ){
+    @Get( uri = '/{userId}/{leagueId}{?seasonId}', produces = MediaType.APPLICATION_JSON )
+    HttpResponse list(String userId, String leagueId,  @Nullable String seasonId ){
         return HttpResponse.ok(
-                statsService.getUserStats( userId, seasonId)
+                statsService.getUserStats( userId, leagueId, seasonId)
         )
     }
 }
