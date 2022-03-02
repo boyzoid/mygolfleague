@@ -20,10 +20,16 @@ class StatsController {
         this.statsService = statsService
     }
 
-    @Get( uri = '/{userId}/{leagueId}{?seasonId}', produces = MediaType.APPLICATION_JSON )
-    HttpResponse list(String userId, String leagueId,  @Nullable String seasonId ){
+    @Get( uri = 'user/{userId}/{leagueId}{?seasonId}', produces = MediaType.APPLICATION_JSON )
+    HttpResponse user(String userId, String leagueId,  @Nullable String seasonId ){
         return HttpResponse.ok(
                 statsService.getUserStats( userId, leagueId, seasonId)
+        )
+    }
+    @Get( uri = 'league/{leagueId}{?seasonId}', produces = MediaType.APPLICATION_JSON )
+    HttpResponse league(String leagueId,  @Nullable String seasonId ){
+        return HttpResponse.ok(
+                statsService.getLeagueStats( leagueId, seasonId)
         )
     }
 }
