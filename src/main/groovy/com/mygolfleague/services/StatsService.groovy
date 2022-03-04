@@ -1,9 +1,8 @@
-package com.mygolfleague.repository
+package com.mygolfleague.services
 
 import com.mygolfleague.dto.AcesDto
 import com.mygolfleague.dto.BestRoundDto
 import com.mygolfleague.dto.HoleAverageDto
-import com.mygolfleague.dto.LeagueDtoBasic
 import com.mygolfleague.dto.RoundHistoryDto
 import org.hibernate.Session
 import org.hibernate.query.Query
@@ -11,7 +10,6 @@ import org.hibernate.transform.AliasToBeanResultTransformer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-import javax.inject.Inject
 import javax.inject.Singleton
 import javax.persistence.EntityManager
 import javax.transaction.Transactional

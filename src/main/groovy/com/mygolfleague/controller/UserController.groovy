@@ -2,6 +2,7 @@ package com.mygolfleague.controller
 
 import com.mygolfleague.repository.LeagueRepository
 import com.mygolfleague.repository.UserRepository
+import com.mygolfleague.services.EmailService
 import groovy.transform.CompileStatic
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.MediaType
@@ -23,9 +24,11 @@ class UserController {
     private final LeagueRepository leagueRepository
     private static final String ATTR_LEAGUE= "league"
     private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
-    UserController( UserRepository userRepository, LeagueRepository leagueRepository ){
+    private final EmailService emailService
+    UserController( UserRepository userRepository, LeagueRepository leagueRepository, EmailService emailService ){
         this.userRepository = userRepository
         this.leagueRepository = leagueRepository
+        this.emailService = emailService
     }
     @Get( uri = '/list', produces = MediaType.APPLICATION_JSON )
     HttpResponse list( Principal principal ){
@@ -40,5 +43,13 @@ class UserController {
         return HttpResponse.ok(
                 [ user: ret ]
         )
+    }
+    
+    @Secured( SecurityRule.IS_ANONYMOUS )
+    @Get(uri="/emailTest", produces="text/plain")
+    public String emailTest(){
+        emailService.sendTestEmail()
+        emailService.sendTestTemplateEmail()
+        return "Email Sent!"
     }
 }

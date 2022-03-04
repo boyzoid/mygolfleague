@@ -1,6 +1,6 @@
 package com.mygolfleague.controller
 
-import com.mygolfleague.repository.StatsService
+import com.mygolfleague.services.StatsService
 import groovy.transform.CompileStatic
 import io.micronaut.core.annotation.Nullable
 import io.micronaut.http.HttpResponse

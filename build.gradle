@@ -33,6 +33,9 @@ dependencies {
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut.oraclecloud:micronaut-oraclecloud-vault")
     implementation ("org.jsoup:jsoup:1.14.3")
+    implementation("io.micronaut.email:micronaut-email-javamail")
+    implementation("io.micronaut.email:micronaut-email-template")
+    implementation("io.micronaut.views:micronaut-views-thymeleaf")
 
 }
 

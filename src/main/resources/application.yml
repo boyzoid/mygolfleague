@@ -1,6 +1,10 @@
 micronaut:
   application:
     name: mygolfleague
+  email:
+    from:
+      email: admin@locusthillgolfleague.com
+      name: Locust Hill Golf League
   security:
     authentication: session
     token:
@@ -37,3 +41,12 @@ netty:
       max-order: 3
 secrets:
   hashSalt: ${HASH_SALT}
+javamail:
+  properties:
+    mail:
+      smtp:
+        port: 587
+        auth: true
+        starttls:
+          enable: true
+        host:
