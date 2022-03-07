@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="JpaBuddyIdeaProjectConfig">
-    <option name="defaultUnitInitialized" value="true" />
-    <option name="reverseEngineeringLastDbConnectionId" value="defb2848-cc88-4e9d-b17b-2b2f2ce02d14" />
-    <option name="reLastEntityCreationPackage" value="src/main/groovy/com/mygolfleague/temp" />
-    <option name="newEntityIdStrategy" />
-  </component>
-</project>
