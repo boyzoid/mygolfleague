@@ -1,0 +1,12 @@
+nav.bg-primary a{
+  color: $gray-400;
+  padding: .5em
+}
+
+nav.bg-primary a.nuxt-link-active, nav.bg-primary a:hover{
+  color: $white;
+}
+a.navbar-brand{
+  color: $white;
+  font-weight: bolder
+}
